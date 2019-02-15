@@ -254,10 +254,6 @@ handle_error $?
 echo "alias blih='blih -u $1'" >> /home/$USER/.zshrc
 echo "alias ns_auth='ns_auth -u $1'" >> /home/$USER/.zshrc
 
-script_header "INSTALLATION DU MAN DE GOOGLE"
-sudo cp $files/google.1 /usr/share/man/man1/google.1
-handle_error $?
-
 script_header "INSTALLATION DE TERMINATOR"
 sys_install terminator
 
@@ -275,9 +271,13 @@ script_header "INSTALLATION DE MAKEFILE-GEN"
 sys_install ruby;git clone https://github.com/kayofeld/makefile-gen.git;cd makefile-gen;sudo ./install.sh;cd ..
 handle_error $?
 
-script_header "INSTALLATION HTOP ?"
+script_header "INSTALLATION DE HTOP"
 sys_install htop
 handle_error $?
+
+script_header "INSTALLATION DE CODE ET SES ADDONS"
+sys_install code
+sudo code --install-extension ms-vsliveshare.vsliveshare;sudo code --install-extension pkief.material-icon-theme;sudo code --install-extension lucasmarandat.epitech-coding-style-checker;sudo code --install-extension nicolaspolomack.epitech-c-cpp-headers
 
 script_header "VOTRE OS EST PRÊT POUR EPITECH" $C_BWHITE
 
