@@ -272,16 +272,12 @@ sudo chmod +s /sbin/reboot
 handle_error $?
 
 script_header "INSTALLATION DE MAKEFILE-GEN"
-sys_install ruby; git clone https://github.com/kayofeld/makefile-gen.git; cd makefile-gen; sudo ./install.sh; cd ..;;
+sys_install ruby;git clone https://github.com/kayofeld/makefile-gen.git;cd makefile-gen;sudo ./install.sh;cd ..
 handle_error $?
 
 script_header "INSTALLATION HTOP ?"
 sys_install htop
 handle_error $?
-
-
-script_header "EFFACEMENT DES FICHIERS D'INSTALLATION"
-rm -rvf ../installation
 
 script_header "VOTRE OS EST PRÊT POUR EPITECH" $C_BWHITE
 
